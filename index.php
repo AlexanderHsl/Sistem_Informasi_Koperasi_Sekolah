@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 
@@ -17,18 +16,18 @@
   </section>
 
   <section class="features">
-    <div class="feature-card">
+    <a href="pages/products/index.php" class="feature-card">
       <h3>Tabel Products</h3>
       <p>products dapat menambah, mengubah, dan menghapus kategori.</p>
-    </div>
-    <div class="feature-card">
+    </a>
+    <a href="pages/suppliers/index.php" class="feature-card">
       <h3>Tabel Suppliers</h3>
       <p>Setiap suppliers dikelompokkan ke dalam satu kategori.</p>
-    </div>
-    <div class="feature-card">
+    </a>
+    <a href="pages/employees/index.php" class="feature-card">
       <h3>Tabel employees</h3>
       <p>Setiap employees di Sekolah</p>
-    </div>
+    </a>
   </section>
 
   <?php require_once __DIR__ . "/components/landing/footer.php" ?>
