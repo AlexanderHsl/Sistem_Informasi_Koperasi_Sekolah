@@ -1,5 +1,7 @@
+<link rel="stylesheet" href="styles/components/header.css">
+
 <header>
-  <nav class="navbar">
-    <a href="/index.php" class="brand">Informasi Koperasi Sekolah</a>
+  <nav class="topbar">
+    <a class="brand">Informasi Koperasi Sekolah</a>
   </nav>
 </header>
