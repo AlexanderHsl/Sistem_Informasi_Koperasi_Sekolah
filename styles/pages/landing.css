@@ -1,19 +1,5 @@
 /* PAGE: LANDING */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 48px;
-  background: #fff;
-  border-bottom: 1px solid var(--line);
-}
-.navbar .brand {
-  color: var(--green-dark);
-}
-.nav-actions {
-  display: flex;
-  gap: 8px;
-}
+
 .hero {
   padding: 260px 48px;
   text-align: center;
@@ -45,7 +31,7 @@
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 24px;
-  font-weight:bolder ;
+  font-weight: bolder;
 }
 .feature-card h3 {
   color: black;
@@ -53,5 +39,5 @@
 }
 .feature-card p {
   font-size: 14px;
-  color: black ;
+  color: black;
 }

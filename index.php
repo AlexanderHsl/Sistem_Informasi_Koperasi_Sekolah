@@ -7,7 +7,7 @@
   <title>Beranda - Sistem Informasi Koperasi Sekolah</title>
   <link rel="stylesheet" href="styles/index.css">
 </head>
-<link rel="stylesheet" href="styles/index copy.css">
+<link rel="stylesheet" href="styles/index.css">
 <body>
   <?php require_once __DIR__ . "/components/landing/header.php" ?>
 

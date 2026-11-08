@@ -3,7 +3,20 @@
   background-color: rgb(32, 92, 27);
   align-content: baseline;
   justify-content: space-between;
-  padding: 20px 48px;
+  padding: 25px 48px;
   color: black;
+  display:flex;
+  flex-direction:column ;
+  align-self: baseline;
+  margin: 0;
+  min-height: 1vh;
+}
+
+.site-footer span {
   font-size: 20px;
+}
+
+.site-footer p {
+  font-size: 15px;
+  flex: 1;
 }

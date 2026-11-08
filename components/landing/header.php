@@ -1,7 +1,5 @@
-<link rel="stylesheet" href="styles/components/header.css">
-
 <header>
-  <nav class="topbar">
+  <nav class="header">
     <a class="brand">Informasi Koperasi Sekolah</a>
   </nav>
 </header>
