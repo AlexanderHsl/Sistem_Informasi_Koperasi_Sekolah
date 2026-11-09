@@ -1,15 +1,29 @@
 /* BASE - dipakai SEMUA halaman */
-body {
-  line-height: 1.5;
-}
-a {
-  text-decoration: none;
+:root {
+  --green: #1f7a4d;
+  --green-dark: #14452d;
+  --red: #c0392b;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --line: #e2e8e4;
+  --bg: #f4f7f5;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .btn {
@@ -82,8 +96,4 @@ a {
 .big-code {
   font-size: 64px;
   color: var(--green);
-}
-
-.table  {
-  color: white;
 }
