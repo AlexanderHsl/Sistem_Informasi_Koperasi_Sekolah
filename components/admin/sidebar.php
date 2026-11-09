@@ -1,6 +1,6 @@
 
 <aside class="sidebar">
-  <div style="color:black;font-size:50px">BukuKita</div>
+  <div style="color:black;font-size:50px">Koperasi Sekolah</div>
 
   <nav>
     <a href="/index.php">Beranda</a>

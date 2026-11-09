@@ -1,6 +1,6 @@
 <?php
-$pageTitle = "Manajemen Kategori";
-$pageSubtitle = "Kelola data kategori buku";
+$pageTitle = "Manajemen Pekerja";
+$pageSubtitle = "Kelola tabel pekerja";
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -8,34 +8,21 @@ $pageSubtitle = "Kelola data kategori buku";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/pages/management.css">
   <title>Employees</title>
 </head>
-<link rel="stylesheet" href="/styles/tableindex.css">
+
 <body>
   <div class="layout">
     <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
-    <main class="main">
+    <div class="main">
       <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
 
-      <div class="content">
-        <div class="toolbar">
-          <a href="create.php" class="btn btn-primary">+ Tambah Kategori</a>
-        </div>
-
-        <div class="Employees table">
-          <table>
-            <thead>
-              <tr>
-                <th>Nama</th>
-                <th>Deskripsi</th>
-                <th>Aksi</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
+      <div class="bodyemployed">
+        <?php require_once __DIR__ . "/../../components/table.php" ?>
       </div>
-    </main>
+    </div>
   </div>
 </body>
 
