@@ -1,18 +1,11 @@
-<?php
-// === TAHAP 1 - CRUD ===
-// TODO 1 : session_start();   (TAHAP 3: ganti dengan require middleware + requireRole(['admin']))
-// TODO 2 : require_once repositories/category-repository.php
-// TODO 3 : $category = getCategory($_GET['id'] ?? 0);
-// TODO 4 : ambil $_SESSION['errors'] dan ['old'] lalu unset()
-// TODO 5 : $data = $old ?: $category;   // input lama jika validasi gagal, jika tidak data dari DB
+<?php 
 
-$category = ['id' => ''];
 $errors = [];
 $old = [];
 $data = [];
 
-$pageTitle = "Edit Kategori";
-$pageSubtitle = "Perbarui data kategori";
+$pageTitle = "Edit Employee Information";
+$pageSubtitle = "Perbarui Tabel Employee";
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -21,7 +14,7 @@ $pageSubtitle = "Perbarui data kategori";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Kategori - BukuKita</title>
-  <link rel="stylesheet" href="../../styles/categories/edit.css">
+  <link rel="stylesheet" href="../../styles/employees/edit.css">
 </head>
 
 <body>
@@ -37,17 +30,41 @@ $pageSubtitle = "Perbarui data kategori";
           <input type="hidden" name="id" value="">
 
           <div class="form-group">
-            <label for="name">Nama Kategori</label>
+            <label for="name">Employee Number</label>
             <!-- TODO 7: value = $data['name'] -->
-            <input type="text" id="name" name="name" value="">
+            <input type="text" id="employee_number" name="employee_number" value="">
             <!-- TODO: tampilkan $errors['name'] di <p class="error-text"> jika ada -->
           </div>
           <div class="form-group">
-            <label for="description">Deskripsi (opsional)</label>
+            <label for="description">Full Name</label>
             <!-- TODO 8: isi textarea dengan $data['description'] -->
-            <textarea id="description" name="description" rows="3"></textarea>
+            <input id="name" name="name" rows="3"></input>
             <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
           </div>
+          <div class="radio">
+            <label for="description">Gender</label>
+            <input type="radio" id="gender" name="gender" >MALE
+            <input type="radio" id="gender" name="gender" >FEMALE
+            <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
+          </div>
+          <div class="form-group">
+            <label for="description">Birth Date</label>
+            <!-- TODO 8: isi textarea dengan $data['description'] -->
+            <input type="date" id="birth_date" name="birth_date" rows="3"></input>
+            <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
+          </div>
+          <div class="form-group">
+            <label for="description">Position</label>
+            <!-- TODO 8: isi textarea dengan $data['description'] -->
+            <select id="position" name="position" rows="3"></select>
+            <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
+          </div>
+          <div class="form-group">
+            <label for="description">Salary</label>
+            <!-- TODO 8: isi textarea dengan $data['description'] -->
+            <input type="number" id="salary" name="salary" rows="3"></input>
+            <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
+          </div> 
 
           <div class="form-actions">
             <a href="index.php" class="btn btn-outline">Batal</a>

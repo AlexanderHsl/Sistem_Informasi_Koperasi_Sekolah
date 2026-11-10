@@ -18,22 +18,29 @@ $pageSubtitle = "Kelola tabel supplier";
 
     <div class="main">
       <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
-
       <div>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>employee_number</th>
-              <th>full_name</th>
-              <th>gender</th>
-              <th>birth_date</th>
-              <th>position</th>
-              <th>salary</th>
-            </tr>
-          </thead>  
-        </table>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>employee_number</th>
+                <th>full_name</th>
+                <th>gender</th>
+                <th>birth_date</th>
+                <th>position</th>
+                <th>salary</th>
+              </tr>
+            </thead>  
+          </table>
+        </div>
+        <div class="crud">
+          <a href="/../../actions/employees/store.php">add</a>
+          <a href="edit.php">edit</a>
+          <a href="/../../actions/employees/delete.php">delete</a>
+        </div>
       </div>
+      
 
     </div>
   </div>

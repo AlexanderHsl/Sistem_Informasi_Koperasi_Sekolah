@@ -10,8 +10,4 @@ $user = $_SESSION['user'] ?? [];
 <a class="brand">Informasi Koperasi Sekolah</a>
 <a href="/../pages/auth/login.php" id="login">login</a>  
 </nav>
-
-<div>
-    <?= $user['name'] ?? 'Guest' ?><br>
-  </div>
 </header>
