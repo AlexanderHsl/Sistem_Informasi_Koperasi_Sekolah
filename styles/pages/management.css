@@ -51,4 +51,14 @@ th {
   text-decoration: none;
   text-align: center;
 }
+.layoutc {
+    display: flex;
+}
 
+.mainc {
+  flex: 1;
+}
+.app-content {
+  margin-left: 30px;
+  margin-top: 30px;
+}

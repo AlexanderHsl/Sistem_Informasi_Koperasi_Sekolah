@@ -1,74 +1,122 @@
-<?php 
+<?php
+session_start();
+// require_once __DIR__ . "/../../repositories/category-repository.php";
+// require_once __DIR__ . "/../../repositories/author-repository.php";
 
-$errors = [];
-$old = [];
-$data = [];
+// $categories = getCategories();
+// $authors = getAuthors();
+$errors = $_SESSION['errors'] ?? [];
+$old = $_SESSION['old'] ?? [];
+unset($_SESSION['errors'], $_SESSION['old']);
 
-$pageTitle = "Edit Kategori";
-$pageSubtitle = "Perbarui data kategori";
+$pageTitle = "Tambah Buku";
+$pageSubtitle = "Lengkapi data buku, kategori, dan penulis";
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Kategori - BukuKita</title>
-  <link rel="stylesheet" href="../../styles/employees/edit.css">
+  <title>Tambah Buku - Perpustakaan Digital</title>
+  <link rel="stylesheet" href="../../styles/employees/create.css">
 </head>
 
 <body>
-  <div class="layout">
+  <div class="layoutc">
     <?php require_once __DIR__ . "/../../components/admin/sidebar.php" ?>
 
-    <main class="main">
+    <main class="mainc">
       <?php require_once __DIR__ . "/../../components/admin/topbar.php" ?>
+      <div class="app-content">
+        <form method="POST" action="../../actions/employees/store.php">
+          <div class="form-card" style="margin-bottom:20px;">
+            <div class="form-section-title">Data Buku</div>
+            <div class="form-group">
+              <label for="title">Judul Buku</label>
+              <input value="<?= $old['title'] ?? '' ?>"type="text" id="title" name="title" placeholder="Contoh: Laskar Pelangi">
+              <?php if (isset($errors['title'])): ?>
+                <p style = "font-size: 12px; color: red; margin-top: 4px;">
+                  <?= $errors['title'] ?>
+                </p>
+              <?php endif?>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="isbn">ISBN</label>
+                <input value="<?= $old['isbn'] ?? '' ?>" type="text" id="isbn" name="isbn" placeholder="Contoh: 978-979-1227-78-0">
+                <?php if(isset($errors['isbn'])): ?>
+                  <p style = "font-size: 12px; color: red; margin-top: 4px;">
+                    <?= $errors['isbn'] ?>
+                  </p>
+                <?php endif?>
+              </div>
+              <div class="form-group">
+                <label for="year">Tahun Terbit</label>
+                <input value="<?= $old['year'] ?? '' ?>" type="number" id="year" name="year" placeholder="Contoh: 2005">
+                <?php if (isset($errors['year'])): ?>
+                <p style = "font-size: 12px; color: red; margin-top: 4px;">
+                  <?= $errors['year'] ?>
+                </p>
+              <?php endif?>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="stock">Jumlah Stok</label>
+                <input value="<?= $old['stock'] ?? '' ?>" type="number" id="stock" name="stock" placeholder="Contoh: 10">
+                <?php if (isset($errors['stock'])): ?>
+                <p style = "font-size: 12px; color: red; margin-top: 4px;">
+                  <?= $errors['stock'] ?>
+                </p>
+              <?php endif?>
+              </div>
+              <div class="form-group">
+                <label for="category_id">Kategori</label>
+                <select id="category_id" name="category_id">
+                  <?php foreach ($categories as $category): ?>
+                    <option <?= $old['category_id'] ?? '' === $category['id'] ? 'selected' : '' ?> value="<?= $category['id'] ?>">
+                      <?= $category['name'] ?>
+                    </option>
+                  <?php endforeach; ?>
+                </select>
+                <?php if (isset($errors['category_id'])): ?>
+                <p style = "font-size: 12px; color: red; margin-top: 4px;">
+                  <?= $errors['category_id'] ?>
+                </p>
+              <?php endif?>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description">Deskripsi</label>
+              <textarea id="description" name="description" rows="3" placeholder="Sinopsis singkat buku">
+                <?=  $old['description'] ?? '' ?>
+              </textarea>
+              <?php if (isset($errors['description'])): ?>
+                <p style = "font-size: 12px; color: red; margin-top: 4px;"><?= $errors['description'] ?></p>
+              <?php endif?>
+            </div>
+          </div>
 
-      <div class="content">
-        <form method="POST" action="../../actions/categories/update.php" class="card">
-          <!-- TODO 6: value = $category['id'] -->
-          <input type="hidden" name="id" value="">
+          <div class="form-card">
+            <div class="form-section-title">Penulis Buku</div>
+            <div class="form-group">
+              <label>Pilih Penulis (bisa lebih dari satu)</label>
+              <div class="checkbox-grid">
+                
+              </div>
+              <?php if (isset($errors['author_ids'])): ?>
+                <p style = "font-size: 12px; color: red; margin-top: 4px;">
+                  <?= $errors['author_ids'] ?>
+                </p>
+              <?php endif?>
+            </div>
 
-          <div class="form-group">
-            <label for="name">Employee Number</label>
-            <!-- TODO 7: value = $data['name'] -->
-            <input type="text" id="employee_number" name="employee_number" value="">
-            <!-- TODO: tampilkan $errors['name'] di <p class="error-text"> jika ada -->
-          </div>
-          <div class="form-group">
-            <label for="description">Full Name</label>
-            <!-- TODO 8: isi textarea dengan $data['description'] -->
-            <textarea id="name" name="name" rows="3"></textarea>
-            <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
-          </div>
-          <div class="radio">
-            <label for="description">Gender</label>
-            <input type="radio" id="gender" name="gender" >MALE
-            <input type="radio" id="gender" name="gender" >FEMALE
-            <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
-          </div>
-          <div class="form-group">
-            <label for="description">Birth Date</label>
-            <!-- TODO 8: isi textarea dengan $data['description'] -->
-            <textarea id="birth_date" name="birth_date" rows="3"></textarea>
-            <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
-          </div>
-          <div class="form-group">
-            <label for="description">Position</label>
-            <!-- TODO 8: isi textarea dengan $data['description'] -->
-            <select id="position" name="position" rows="3"></select>
-            <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
-          </div>
-          <div class="form-group">
-            <label for="description">Salary</label>
-            <!-- TODO 8: isi textarea dengan $data['description'] -->
-            <textarea id="salary" name="salary" rows="3"></textarea>
-            <!-- TODO: tampilkan $errors['description'] di <p class="error-text"> jika ada -->
-          </div> 
-
-          <div class="form-actions">
-            <a href="index.php" class="btn btn-outline">Batal</a>
-            <button type="submit" name="update" class="btn btn-primary">Simpan Perubahan</button>
+            <div class="form-actions">
+              <a href="index.php" class="btn btn-outline">Batal</a>
+              <button type="submit" name="store" class="btn btn-primary">Simpan Buku</button>
+            </div>
           </div>
         </form>
       </div>

@@ -35,7 +35,7 @@ $pageSubtitle = "Kelola tabel produk";
           </table>
         </div>
         <div class="crud">
-          <a href="/../../actions/employees/store.php">add</a>
+          <a href="create.php">add</a>
           <a href="edit.php">edit</a>
           <a href="/../../actions/employees/delete.php">delete</a>
         </div>

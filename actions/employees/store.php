@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . "/../../config/database.php";
-require_once __DIR__ . "/../../validations/book-validation.php";
+// require_once __DIR__ . "/../../validations/book-validation.php";
 if (isset($_POST['store']) && $_SERVER['REQUEST_METHOD'] === "POST") {
     try {
         
