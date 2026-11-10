@@ -1,5 +1,45 @@
-/* PAGE: AUTH */
-.auth-card { width: 380px; }
-.auth-card h1 { font-size: 22px; margin-bottom: 20px; }
-.auth-link { margin-top: 16px; font-size: 14px; text-align: center; }
-.auth-link a { color: var(--green); font-weight: bold; }
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sidebar);
+  padding: 24px;
+  
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border: 2px solid black;
+  font-style: italic;
+  background-color: white;
+  
+}
+.auth-logo {
+  font-size: larger;
+}
+
+.auth-card h1 {
+  font-size: 30px;
+  font-weight: bold;
+  
+}
+
+.auth-card .auth-subtitle {
+  font-size: 13.5px;
+  margin-bottom: 24px;
+}
+
+.auth-card .form-footer-link {
+  text-align: center;
+  font-size: 13.5px;
+  color: black;
+  margin-top: 20px;
+}
+
+.auth-card .form-footer-link a {
+  color: darkgreen;
+  font-weight: 600;
+}

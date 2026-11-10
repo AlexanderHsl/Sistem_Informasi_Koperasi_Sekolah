@@ -1,9 +1,9 @@
 /* PAGE: LANDING */
 
 .hero {
-  padding: 260px 48px;
+  padding: 265px;
   text-align: center;
-  background: #fff;
+  background-color: white;
 }
 .hero h1 {
   font-size: 40px;
@@ -12,21 +12,22 @@
 }
 
 
-
 .features {
   display: flex;
   gap: 30px;
-  padding: 48px;
+  padding: 40px;
+  background-color: white;
+  justify-content: space-evenly;
 }
 .feature-card {
   flex: 1;
-  background: #cde118;
-  border-radius: 10px;
+  background: var(--feature);
+  border-radius: 20px;
   padding: 24px;
   font-weight: bolder;
 }
 .feature-card h3 {
-  color: black;
+  color: var(--text);
   margin-bottom: 8px;
 }
 .feature-card p {
